@@ -1,3 +1,64 @@
-h1 {
-    color: red;
+body {
+    background-color: $blue;
+}
+
+.p {
+    margin-top: 10rem;
+    display: flex;
+    justify-content: center;
+
+    .content {
+        width: 22rem;
+        background-color: $w;
+        border-radius: 0.5rem;
+        box-shadow: 0px 0px 0.5rem 0 $b;
+        padding: 2.5rem 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 5.2rem;
+            height: 2.8rem;
+        }
+        
+        .switch input { 
+            opacity: 0;
+        }
+          
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: $w-button;
+            transition: .4s;
+            border-radius: 3rem;
+        }
+          
+        .slider:before {
+            content: "";
+            position: absolute;
+            height: 2.9rem;
+            width: 2.9rem;
+            background-color: white;
+            border-radius: 50%;
+            box-shadow: 0px 0px 1rem 0.1rem $g;
+            transition: .4s;
+        }
+          
+        input:checked + .slider {
+            background-color: $green;
+        }
+          
+        input:checked + .slider:before {
+            transform: translateX(2.4rem);
+        }
+    }
 }
